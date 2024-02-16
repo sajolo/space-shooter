@@ -45,7 +45,7 @@ function removeOffScreenBullets() {
 exports.startGame = function() {
     console.log('Space Shooter ASCII Iniciado');
     
-    // Configura la entrada del teclado
+    // Configurar la entrada del teclado
     readline.emitKeypressEvents(process.stdin);
     if (process.stdin.isTTY) process.stdin.setRawMode(true);
     
@@ -83,9 +83,9 @@ function render() {
         for (let x = 0; x < 20; x++) {
             let char = ' ';
             if (x === playerPosition.x && y === playerPosition.y) {
-                char = '^'; // Nave del jugador
+                char = `^`; // Nave del jugador
             } else if (enemies.some(enemy => enemy.x === x && enemy.y === y)) {
-                char = 'E'; // Enemigos
+                char = `/-^-\\`; // Enemigos
             } else if (bullets.some(bullet => bullet.x === x && bullet.y === y)) {
                 char = '|'; // Balas
             }
